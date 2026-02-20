@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Becket Beans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Rubik+Gemstones&family=Gabarito:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Sticky header: top bar + navigation -->
+  <header class="site-header">
+    <div class="top-bar">
+      <h1 class="brand">Becket Beans</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#drinks">Drinks</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <p class="tagline">Exceptional coffee, brewed with passion.</p>
+  </section>
+
+  <!-- Drinks & Opening Times -->
+  <section id="drinks" class="drinks-section">
+    <div class="drinks-wrapper">
+
+      <!-- 2×2 grid of drink cards -->
+      <div class="drinks-grid">
+
+        <div class="drink-box">
+          <h3 class="drink-name">Espresso</h3>
+          <p>A concentrated shot of pure, rich coffee pulled from our finest single-origin beans. Bold, intense, and the foundation of every great coffee.</p>
+          <p class="price">£2.50</p>
+        </div>
+
+        <div class="drink-box">
+          <h3 class="drink-name">Flat White</h3>
+          <p>Velvety microfoam poured over a double ristretto. Smooth and strong, with a perfect balance of milk and espresso in every sip.</p>
+          <p class="price">£3.20</p>
+        </div>
+
+        <div class="drink-box">
+          <h3 class="drink-name">Oat Milk Latte</h3>
+          <p>Our house espresso paired with creamy, sustainably sourced oat milk. Naturally sweet, wonderfully smooth, and completely plant-based. Available hot or iced.</p>
+          <p class="price">£3.80</p>
+        </div>
+
+        <div class="drink-box">
+          <h3 class="drink-name">Cold Brew</h3>
+          <p>Slow-steeped for 18 hours in cold water for a naturally sweet, low-acid coffee. Served over ice — refreshing and deeply satisfying.</p>
+          <p class="price">£3.50</p>
+        </div>
+
+      </div><!-- /.drinks-grid -->
+
+      <!-- Opening times — vertically centred, to the right -->
+      <aside class="opening-times">
+        <h2>Opening Times</h2>
+        <table>
+          <tbody>
+            <tr><th>Monday</th><td>7:00 – 18:00</td></tr>
+            <tr><th>Tuesday</th><td>7:00 – 18:00</td></tr>
+            <tr><th>Wednesday</th><td>7:00 – 18:00</td></tr>
+            <tr><th>Thursday</th><td>7:00 – 20:00</td></tr>
+            <tr><th>Friday</th><td>7:00 – 20:00</td></tr>
+            <tr><th>Saturday</th><td>8:00 – 17:00</td></tr>
+            <tr><th>Sunday</th><td>9:00 – 15:00</td></tr>
+          </tbody>
+        </table>
+      </aside>
+
+    </div><!-- /.drinks-wrapper -->
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>Becket Beans is a cosy neighbourhood coffee shop dedicated to sourcing the finest beans from around the world. We believe great coffee brings people together — come pull up a chair.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <p>📍 12 Becket Street, Canterbury, CT1 2AA</p>
+    <p>📞 01227 555 0123</p>
+    <p>✉️ hello@becketbeans.co.uk</p>
+  </section>
+
+  <!-- Footer — same colour as the navigation -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Becket Beans. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /* Make all four drink boxes the same height (tallest determines height) */
+    function equaliseCardHeights() {
+      var boxes = document.querySelectorAll('.drink-box');
+      var max = 0;
+      boxes.forEach(function (b) { b.style.height = 'auto'; });
+      boxes.forEach(function (b) { max = Math.max(max, b.offsetHeight); });
+      boxes.forEach(function (b) { b.style.height = max + 'px'; });
+    }
+    document.addEventListener('DOMContentLoaded', equaliseCardHeights);
+    window.addEventListener('resize', equaliseCardHeights);
+  </script>
+
+</body>
+</html>

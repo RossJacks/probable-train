@@ -1,0 +1,218 @@
+/* =====================================================
+   Becket Beans – stylesheet
+   Fonts:
+     Barriecito      → main brand header
+     Rubik Gemstones → drink names
+     Gabarito        → all other text
+===================================================== */
+
+/* ---------- Reset & base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --colour-brand:   #3b2314;   /* deep espresso brown  */
+  --colour-nav-footer: #5c3d2e; /* warm mid-brown – nav + footer */
+  --colour-nav-hover: #c8956c;  /* caramel hover       */
+  --colour-bg:      #fdf6ee;   /* creamy off-white     */
+  --colour-card-bg: #fff8f0;
+  --colour-card-border: #e2c9a8;
+  --colour-text:    #2e1a0e;
+  --colour-price:   #7a4a2a;
+  --max-width: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Gabarito', sans-serif;
+  background-color: var(--colour-bg);
+  color: var(--colour-text);
+  line-height: 1.6;
+}
+
+/* ---------- Sticky header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Top bar */
+.top-bar {
+  background-color: var(--colour-brand);
+  padding: 0.6rem 2rem;
+  text-align: center;
+}
+
+.brand {
+  font-family: 'Barriecito', cursive;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: var(--colour-nav-footer);
+  padding: 0 2rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 3px;
+}
+
+.main-nav a:hover {
+  background-color: var(--colour-nav-hover);
+  color: var(--colour-brand);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: linear-gradient(135deg, #3b2314 0%, #7a4a2a 100%);
+}
+
+.tagline {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.5rem;
+  color: #fdf6ee;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Drinks & Opening Times ---------- */
+.drinks-section {
+  padding: 3rem 2rem;
+}
+
+/* Horizontally centred wrapper */
+.drinks-wrapper {
+  display: flex;
+  align-items: center;   /* vertically centre opening times vs. the grid */
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 2 × 2 grid – all cells the same height (JS equalises them on load) */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  flex: 1 1 auto;        /* take up remaining space */
+  align-items: start;
+}
+
+.drink-box {
+  background-color: var(--colour-card-bg);
+  border: 1px solid var(--colour-card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.drink-name {
+  font-family: 'Rubik Gemstones', cursive;
+  font-size: 1.4rem;
+  color: var(--colour-brand);
+}
+
+.price {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--colour-price);
+}
+
+/* Opening times – to the right, vertically centred */
+.opening-times {
+  flex: 0 0 auto;
+  background-color: var(--colour-card-bg);
+  border: 1px solid var(--colour-card-border);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  align-self: center;   /* vertically centre relative to the grid */
+}
+
+.opening-times h2 {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--colour-brand);
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+
+.opening-times table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.opening-times th,
+.opening-times td {
+  padding: 0.35rem 0.75rem;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.opening-times th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--colour-brand);
+}
+
+.opening-times td {
+  text-align: right;
+  color: var(--colour-text);
+}
+
+/* ---------- About & Contact ---------- */
+.about-section,
+.contact-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.about-section h2,
+.contact-section h2 {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--colour-brand);
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Footer – same colour as nav ---------- */
+.site-footer {
+  background-color: var(--colour-nav-footer);
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 0.9rem;
+}
