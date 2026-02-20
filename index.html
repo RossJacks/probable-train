@@ -102,24 +102,6 @@
     <p>&copy; 2026 Becket Beans. All rights reserved.</p>
   </footer>
 
-  <script>
-    /* Make all four drink boxes the same height (tallest determines height) */
-    function equaliseCardHeights() {
-      var boxes = document.querySelectorAll('.drink-box');
-      var max = 0;
-      boxes.forEach(function (b) {
-        b.style.height = 'auto';
-      });
-      boxes.forEach(function (b) {
-        max = Math.max(max, b.offsetHeight);
-      });
-      boxes.forEach(function (b) {
-        b.style.height = max + 'px';
-      });
-    }
-    document.addEventListener('DOMContentLoaded', equaliseCardHeights);
-    window.addEventListener('resize', equaliseCardHeights);
-  </script>
 </body>
 
 </html>

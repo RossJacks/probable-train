@@ -130,13 +130,13 @@ body {
   margin: 0 auto;
 }
 
-/* 2 × 2 grid – all cells the same height (JS equalises them on load) */
+/* 2 × 2 grid – cards in each row share equal height */
 .drinks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   flex: 1 1 auto;        /* take up remaining space */
-  align-items: start;
+  align-items: stretch;
 }
 
 .drinks-intro {
@@ -160,6 +160,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  height: 100%;
 }
 
 .drink-name {
