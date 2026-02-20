@@ -15,13 +15,14 @@
 
 :root {
   --colour-brand:   #3b2314;   /* deep espresso brown  */
-  --colour-nav-footer: #5c3d2e; /* warm mid-brown – nav + footer */
+  --colour-nav-footer: #6b3f2a; /* menu + footer */
   --colour-nav-hover: #c8956c;  /* caramel hover       */
-  --colour-bg:      #fdf6ee;   /* creamy off-white     */
-  --colour-card-bg: #fff8f0;
+  --colour-bg:      #f7f3f1;   /* page background */
+  --colour-card-bg: #fff8f2;   /* cards background */
   --colour-card-border: #e2c9a8;
   --colour-text:    #2e1a0e;
-  --colour-price:   #7a4a2a;
+  --colour-featured-text: #6b4b3c;
+  --colour-title-text: #2b1f18;
   --max-width: 1100px;
 }
 
@@ -46,16 +47,27 @@ body {
 
 /* Top bar */
 .top-bar {
-  background-color: var(--colour-brand);
+  background-color: #a97458;
   padding: 0.6rem 2rem;
-  text-align: center;
 }
 
 .brand {
   font-family: 'Barriecito', cursive;
-  font-size: 3rem;
+  font-size: 3.8rem;
   color: #fff;
   letter-spacing: 0.04em;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.brand-tagline {
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1rem;
+  color: #fdf6ee;
+  max-width: var(--max-width);
+  margin: 0.2rem auto 0;
+  text-align: right;
 }
 
 /* Navigation */
@@ -88,18 +100,20 @@ body {
   color: var(--colour-brand);
 }
 
-/* ---------- Hero ---------- */
-.hero {
-  text-align: center;
-  padding: 4rem 2rem 3rem;
-  background: linear-gradient(135deg, #3b2314 0%, #7a4a2a 100%);
+
+/* ---------- About ---------- */
+.about-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
 }
 
-.tagline {
+.about-section h2 {
   font-family: 'Gabarito', sans-serif;
-  font-size: 1.5rem;
-  color: #fdf6ee;
-  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--colour-brand);
+  margin-bottom: 0.75rem;
 }
 
 /* ---------- Drinks & Opening Times ---------- */
@@ -111,7 +125,7 @@ body {
 .drinks-wrapper {
   display: flex;
   align-items: center;   /* vertically centre opening times vs. the grid */
-  gap: 3rem;
+  gap: 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -125,11 +139,24 @@ body {
   align-items: start;
 }
 
+.drinks-intro {
+  grid-column: 1 / -1;
+  text-align: left;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--colour-featured-text);
+}
+
+.drink-box p {
+  color: var(--colour-featured-text);
+}
+
 .drink-box {
   background-color: var(--colour-card-bg);
   border: 1px solid var(--colour-card-border);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -137,74 +164,53 @@ body {
 
 .drink-name {
   font-family: 'Rubik Gemstones', cursive;
-  font-size: 1.4rem;
-  color: var(--colour-brand);
+  font-size: 1.9rem;
+  color: var(--colour-title-text);
+  text-align: center;
 }
 
-.price {
-  margin-top: auto;
-  font-weight: 600;
-  color: var(--colour-price);
+.drink-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0.15rem auto 0.3rem;
 }
 
 /* Opening times – to the right, vertically centred */
 .opening-times {
   flex: 0 0 auto;
+  width: 220px;
+  order: -1;
   background-color: var(--colour-card-bg);
   border: 1px solid var(--colour-card-border);
   border-radius: 8px;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem;
   align-self: center;   /* vertically centre relative to the grid */
 }
 
+.opening-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 0.8rem;
+}
+
 .opening-times h2 {
-  font-family: 'Gabarito', sans-serif;
-  font-size: 1.3rem;
+  font-family: 'Rubik Gemstones', cursive;
+  font-size: 1.9rem;
   font-weight: 600;
-  color: var(--colour-brand);
+  color: var(--colour-title-text);
   margin-bottom: 0.9rem;
   text-align: center;
 }
 
-.opening-times table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.opening-times th,
-.opening-times td {
-  padding: 0.35rem 0.75rem;
-  font-family: 'Gabarito', sans-serif;
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.opening-times th {
-  text-align: left;
-  font-weight: 600;
-  color: var(--colour-brand);
-}
-
-.opening-times td {
-  text-align: right;
-  color: var(--colour-text);
-}
-
-/* ---------- About & Contact ---------- */
-.about-section,
-.contact-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-}
-
-.about-section h2,
-.contact-section h2 {
-  font-family: 'Gabarito', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--colour-brand);
-  margin-bottom: 0.75rem;
+.opening-times p {
+  text-align: center;
+  color: var(--colour-featured-text);
 }
 
 /* ---------- Footer – same colour as nav ---------- */
@@ -212,7 +218,7 @@ body {
   background-color: var(--colour-nav-footer);
   color: #fff;
   text-align: center;
-  padding: 1.25rem 2rem;
+  padding: 0.6rem 2rem;
   font-family: 'Gabarito', sans-serif;
   font-size: 0.9rem;
 }
